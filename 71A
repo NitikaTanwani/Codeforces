@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.lang.*;
+import java.io.*;
+public class Ideone {
+public static void main(String[] args){
+         int t, n,i=0;
+     Scanner in = new Scanner(System.in);
+     String  []a=new String[101];
+		n=in.nextInt();
+		t=n;
+		
+		while(n>0)
+		{ a[i]=in.next();
+		    i++;
+		    n--;
+		}
+		for(i=0;i<t;i++)
+		 {
+		 	 if(a[i].length()>10)
+		 	 {
+		System.out.print(a[i].charAt(0));
+		 int c=a[i].length();
+		 System.out.print(c-2);
+		 System.out.println(a[i].charAt(c-1));
+		 	 }
+		 	 else
+		 	 System.out.println(a[i]);
+		 	 
+		 }
+		 	
+	}
+}
