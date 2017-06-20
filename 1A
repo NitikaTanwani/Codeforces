@@ -1,0 +1,17 @@
+#include <iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main() {
+unsigned long int n,m;
+  long double i,j,a;
+    cin>>n>>m>>a;
+    i=n/a;
+    j=m/a;
+    
+    cout<<fixed<<setprecision(0)<<ceil(i)*ceil(j);
+    
+    
+    return 0;
+}
