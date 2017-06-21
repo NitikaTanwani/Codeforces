@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int count1,count0,cnt,dang_situ=0;
+	int d[1000],e[1000];
+     string s;
+     char x;
+     cin>>s;
+     int n=s.length();
+    for(int i=0;i<=n;i++)
+    {
+    	if ((s[i]=='0') || (s[i] == '1'))
+    	{
+    		x=s[i];
+    		cnt=0;
+    		for (int j=(i+1);j<=(i+6);j++)
+    		{ if (s[j]==x)
+    		      cnt++;
+    		}
+    		if (cnt==6) 
+    		   dang_situ=1;
+    		cnt==0;
+    	}
+    }
+    if (dang_situ==0)
+    cout<<"NO";
+    else
+    cout<<"YES";
+     		     
+	return 0;
+}
