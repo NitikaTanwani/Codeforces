@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n,a,b,max=0,s[1000],i=1,t;
+    s[0]=0;
+    cin>>n;
+    t=n;
+    while(n>0)
+    {
+        cin>>a>>b;
+    //  cout<<a<<b;
+    //  cout<<i<<endl;
+        s[i]=s[i-1]+b-a;
+    //  cout<<s[i]<<endl;
+        n--;
+        i++;
+    }
+   for(i=0;i<=t;i++)
+   {
+    if(s[i]>=max)
+    {
+    
+     max=s[i];
+     
+      }
+   } 
+   cout<<max;
+    return 0;
+}   
