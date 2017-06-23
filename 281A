@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+public class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner in=new Scanner(System.in);
+		String s,a,b,c;
+		int len;
+		s=in.next();
+		len=s.length();
+		a=s.substring(0,1);
+		c=a.toUpperCase();
+		b=s.substring (1,len);
+		System.out.println(c+b);
+	}
+}
