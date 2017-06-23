@@ -1,0 +1,43 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+public class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{ 
+		int[] alpha=new int[26];
+	  	String s;
+		int repeat=0,j=0,count=0;
+		Scanner in=new Scanner(System.in);
+		s=in.next();
+		int len=s.length();
+		char pat ='a';
+		for(int k=0;k<26;k++)
+		{
+			alpha[k]=0;
+		}
+		while(pat<='z')
+		{
+		for(int i=0;i<len;i++)
+		{
+			if(s.charAt(i)==pat)
+			alpha[j]+=1;
+		}
+		j++;
+		++pat;
+		}
+		for(int t=0;t<26;t++)
+		{
+			if(alpha[t]>=1)
+			count++;
+		}
+		if(count%2==0)
+		System.out.println("CHAT WITH HER!");
+		else
+		System.out.println("IGNORE HIM!");
+		
+		// your code goes here
+	}
+}
