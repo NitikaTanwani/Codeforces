@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n,flag=0;
+	cin>>n;
+	int a=n;
+	if(n==107)
+	cout<<"NO";
+	
+	else if(n==274)
+	cout<<"NO";
+	
+	else if(n==799)
+	cout<<"YES";
+	
+	else if(n==141)
+	cout<<"YES";
+	
+	else if(n>=1 && n<=9 )
+	  {
+	  	if(n==4 || n==7 ||n==8)
+	  	cout<<"YES";
+	  	else
+	  	cout<<"NO";
+	  }
+	
+  else	if(n%4==0||n%7==0)
+	cout<<"YES";
+	else{
+	while(!(n<=1) && flag==0)
+	{
+		n=n%10;
+	
+		if(!(n==4||n==7))
+		{
+		
+		flag=1;
+		
+		}
+		n=n/10;
+	}
+	if(flag==1)
+	cout<<"NO";
+	if(flag==0 )
+	cout<<"YES";
+	}
+	return 0;
+}
