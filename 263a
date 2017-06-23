@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int arr[6][6];
+	int a,b;
+	int moves=0;
+	for(int i=1;i<=5;i++)
+	  for(int j=1;j<=5;j++)
+	  {
+	  	cin>>arr[i][j];
+	  	if(arr[i][j]==1)
+	  	{
+	  		 a=i;
+	  		 b=j;
+	  	}
+	  }
+	 // cout<<a<<endl;
+	  //cout<<b<<endl;
+	  if(arr[3][3]==1)
+	  {
+	   moves=0;
+	   cout<<moves;
+	  }
+	  else
+	  {
+	  	int movea=3-a;
+	  	if (movea<0)
+	  	movea=movea*-1;
+	  //	cout<<movea;
+	  	int moveb=3-b;
+	  	//cout<<moveb;
+	  	if(moveb<0)
+	  	moveb=moveb*-1;
+	  	moves=movea+moveb;
+	  
+	  	
+	  	cout<<moves;
+	  }
+	return 0;
+}
