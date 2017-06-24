@@ -1,0 +1,58 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+ 
+ int flag=0;
+/*bool find(int b,int c[])
+{
+	for(int i=0;i<c.length;i++)
+	{
+		if (c[i]==b)
+		{
+			return true;
+		}
+	}
+}*/
+
+int checkPair(int a[],int val,int size)
+{
+	//if(find(0,a) && find(val,a))
+	// return true;
+	 
+	//else
+	
+		for (int i=0;i<size;i++)
+		{
+			for (int j=0;j<size;j++)
+			{
+				if((a[i]+a[j])==val && i!=j)
+				{
+				flag=1;
+				return 1;
+			    }
+			if(flag==1)
+			break;
+		   }
+		}
+	}
+
+
+int main()
+{
+ int a[100],x,n;
+ int ans;
+ cin>>x;
+ cin>>n;
+ for (int i=0;i<n;i++)
+ {
+ 	cin>>a[i];
+ 	
+ }
+	ans=checkPair(a,x,n);
+	if(ans==1)
+	cout<<"YES";
+	else
+	cout<<"NO";
+	
+	return 0;
+}
