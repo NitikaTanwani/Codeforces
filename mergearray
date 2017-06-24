@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+int* shift(int a,int b[],int size)
+{
+	while((a+1)<size)
+	b[a+1]=b[a];
+	
+	return b;
+}
+	
+int main() {
+	// your code goes here
+	int m,n;
+	cin>>n>>m;
+	//DYNAMIC ARRAY DECLARATION
+	int *a=NULL;
+	int *b=NULL;
+	a=new int[n];
+	b=new int[m+n];
+	
+	//Taking elements into array n
+	for (int i=0;i<n;i++)
+	{
+		cin>>a[i];
+	//	cout<<a[i]<<" ";
+	}
+	for(int i=0;i<m+n;i++)
+	{
+		cin>>b[i];
+		//cout<<b[i]<<" ";
+	}
+	for(int i=0;i<n;i++)
+	{
+		for (int j=0;j<m+n;j++)
+		{
+			if(a[0]<b[0])
+			{
+				int p=j;
+				//shift(0,b,m+n);
+				while((p+1)<m+n)
+	            b[p+1]=b[p];
+	            
+				b[0]=a[0];
+			}
+			if (a[i]<=b[j] && a[i]>=b[j-1])
+			{
+				int q;
+				q=j;
+				//shift(j,b,m+n);
+				while((q+1)<m+n)
+	            b[q+1]=b[q];
+	            
+				b[j]=a[i];
+			}
+		}
+	}
+	for (int i=0;i<m+n;i++)
+	{
+		cout<<b[i];
+	}
+	return 0;
+}
