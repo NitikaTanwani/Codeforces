@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n,d,ang;
+	cin>>n>>d;
+	int arr[101],rotate[101],count=0;
+	for (int i=1;i<=n;i++)
+	{
+		cin>>arr[i];
+	}
+	for (int i=1;i<=n;i++)
+	{
+		ang=i-d;
+		if(ang<0)
+		{
+			rotate[n-i]=arr[i];
+			
+			count++;
+			//cout<<"Neg"<<" ";
+		}
+		if(ang==0)
+		{
+			rotate[n]=arr[i];
+		}
+		else
+		{
+			rotate[ang]=arr[i];
+		}
+	}
+	for (int i=1;i<=n;i++)
+	{
+		cout<<rotate[i]<<" ";
+	}
+	return 0;
+}
