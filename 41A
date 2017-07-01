@@ -1,0 +1,26 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+//import java.StringBuffer.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+public class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		 Scanner o=new Scanner(System.in);
+	   String s=o.nextLine();
+	   String t=o.nextLine();
+	   
+	   StringBuffer buffer = new StringBuffer(t);
+       String c=buffer.reverse().toString();
+      // System.out.println(c);
+	   //string c=new StringBuffer(s).reverse().toString();
+	   if(c.equals(s))
+	   System.out.println("YES");
+	   else
+	   System.out.println("NO");
+	
+	}
+}
