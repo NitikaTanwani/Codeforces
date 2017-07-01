@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+ public class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		//int year;
+		Scanner e =new Scanner(System.in);
+		int year=e.nextInt();
+		year=year+1;
+		while(true)
+		{
+		String temp=Integer.toString(year);
+		char a,b,c,d;
+		a=temp.charAt(0);
+		b=temp.charAt(1);
+		c=temp.charAt(2);
+		d=temp.charAt(3);
+		if(a!=b && b!=c && c!=d && d!=a && a!=c && b!=d)
+		break;
+		int againint=Integer.parseInt(temp);
+		againint=againint+1;
+		year=againint;
+		}
+		System.out.println(year);
+		
+	}
+}
