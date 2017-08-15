@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n,arr[100],temp,maxj,k,minj,count=0,p=2000,i,q=-200;
+	cin>>n;
+	for(int i=0; i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	int max=arr[0];
+	int min=arr[0];
+	for(int j=0;j<n; j++)
+	{
+		if(max<=arr[j])
+		{
+			temp=max;
+			max=arr[j];
+			arr[j]=max;
+			//maxj=j;
+		}
+	}
+	for(int k=0;k<n; k++)
+	{
+		if(min>=arr[k])
+		{
+			temp=min;
+			min=arr[k];
+			arr[k]=min;
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		if(arr[i]==max)
+		{
+			if(p>i)
+			{
+				p=i;
+			}
+		}
+	}
+	//cout<<p;
+	for(i=0;i<n;i++)
+	{
+		if(arr[i]==min)
+		{
+			if(q<i)
+			{
+				q=i;
+			}
+		}
+	}
+	if(arr[0]==max and arr[n-1]==min)
+	{
+		cout<<0;
+	}
+	else
+	{
+	int time=p+(n-1-q)- (q < p ? 1 : 0);
+	
+	cout<<time;
+	}
+//	cout<<q;
+	return 0;
+}
