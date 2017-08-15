@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	string s,s1,a,b;
+	int n,count=1,p,d=0;
+	cin>>n;
+	cin>>s;
+	a=s;
+	p=n-1;
+	while(p--)
+	{
+		cin>>s1;
+		b=s1;
+		if(a!=b)
+		{
+			count++;
+			a=b;
+		}
+		a=b;
+		d++;
+	}
+	cout<<count;
+
+	return 0;
+}
