@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	string a1,b1;
+	int c[101];
+	cin>>a1;
+	cin>>b1;
+	for(int i=0;i<101;i++)
+	{
+		c[i]=99;
+	}
+	
+	//cout<<a1.length();
+	for (int i=0;i<a1.length();i++)
+	{
+		if(a1[i]!=b1[i])
+		{
+			c[i]=1;
+		}
+		else
+		{
+			c[i]=0;
+		}
+	}
+	for (int d=0;d<101;d++)
+	{
+		if(c[d]!=99)
+		{
+			cout<<c[d];
+		}
+		else
+		{
+			break;
+		}
+	}
+	
+	
+	return 0;
+}
