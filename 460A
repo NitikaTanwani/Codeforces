@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int m,n,div,mod;
+	cin>>n>>m;
+	int total=n;
+	while(n>=m)
+    {
+        div = (n/m);
+        total = total + div;
+        mod = (n%m);
+        n= (div+mod);
+    }
+    
+	cout<<total;
+	return 0;
+}
