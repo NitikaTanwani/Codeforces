@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int a,b,n,gcd1=0,gcd2=0;
+	cin>>a>>b>>n;
+	int gcd(int a, int b);
+	while(true)
+	{
+		gcd1=gcd(n,a);
+		
+		
+		if(n<gcd1)
+		{
+			cout<<'1';
+			break;
+		}
+		else
+		   n=n-gcd1;
+		
+		gcd2=gcd(b,n);
+		
+		if(n<gcd2)
+		{
+			cout<<'0';
+			break;
+		}
+		else
+		n=n-gcd2;
+	}
+	
+	return 0;
+}
+int gcd(int a, int b)
+{
+	if(b==0)
+		return a;
+	return gcd(b,a%b );
+}
