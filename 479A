@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int a,b,c,f1,f2,f3,f4,f5;
+	cin>>a>>b>>c;
+	f1=a+b*c;
+	f2=a*(b+c);
+	f3=a*b*c;
+	f4=(a+b)*c;
+	f5=a+b+c;
+	int min_ab, min_bc, min;
+min_ab = f1 > f2 ? f1 : f2;
+min_bc = f3 > f4 ? f3 : f4;
+min = min_ab > min_bc ? min_ab : min_bc;
+if(f5>min)
+{
+	cout<<f5;
+}
+else
+{
+	cout<<min;
+}
+	return 0;
+}
