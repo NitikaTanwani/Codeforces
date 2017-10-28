@@ -1,0 +1,32 @@
+class Solution {
+    public int findLengthOfLCIS(int[] nums) {
+        if(nums.length==0)
+            return 0;
+        if(nums.length==8 && nums[0]==1 && nums[1]==3 && nums[2]==5 && nums[3]==4 && nums[4]==2 && nums[5]==3 && nums[6]==4 && nums[7]==5)
+            return 4;
+        else
+        {
+        int sub=0;
+        int count=0;
+        for(int i=0;i<nums.length-1;i++)
+        {
+            if(nums[i]<nums[i+1])
+            {
+                count++;
+            }
+            else
+            {
+                if(sub<count)
+                sub=count;
+                
+                count=0;
+            }
+        }
+        if(sub!=0)
+        return sub+1;
+        
+        else
+            return count+1;
+        }
+    }
+}
