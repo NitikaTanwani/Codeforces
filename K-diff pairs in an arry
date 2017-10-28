@@ -1,0 +1,34 @@
+class Solution {
+    public int findPairs(int[] nums, int k) {
+      /*  if(nums.length==1)
+            return 0;
+        HashMap<Integer,Boolean> hm=new HashMap<Integer,Boolean>();  
+        int count=0;
+        //int notunique=0;
+        HashMap<Integer,Boolean> notunique=new HashMap<Integer,Boolean>(); 
+        for (int i=0;i<nums.length;i++)
+        {
+            if(!hm.containsKey(nums[i]))
+                hm.put(nums[i],true);
+            
+            else
+                notunique.put(nums[i],true);
+        }
+        int size=hm.size();
+        if(size==1 && k==0)
+            return 1;
+        for(Map.Entry m:hm.entrySet())
+        {
+            for(Map.Entry a:hm.entrySet())
+            {
+                if(Math.abs(((Integer)m.getKey())-((Integer)a.getKey()))==k)
+                    count++;
+            }
+        }
+         //if(Math.abs(m.getKey()-(m.next()).getkey()==k))
+            // count++;
+        if(k==0 && notunique.size()>=0)
+            return notunique.size();
+        else
+        return count/2;
+        }
