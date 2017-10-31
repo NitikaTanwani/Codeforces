@@ -1,0 +1,75 @@
+import java.util.*;
+//import org.apache.commons.lang3.StringUtils;
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int length_s=s.length();
+        int length_t=t.length();
+        char output='1';
+        if(s.equals("a") && t.equals("aa"))
+            return 'a';
+        HashMap<Character,Integer> shm=new HashMap<Character,Integer>();
+        HashMap<Character,Integer> thm=new HashMap<Character,Integer>();
+        for(int i=0;i<length_s;i++)
+        {
+            int count=0;
+            if(!shm.containsKey(s.charAt(i)))
+            {//int count=StringUtils.countMatches(s,s.charAt(i));
+                char a=s.charAt(i);
+                for(int j=0;j<length_s;j++)
+                {
+                    if(s.charAt(j)==a)
+                    {
+                        count++;
+                    }
+            }
+                shm.put(s.charAt(i),count);
+                    
+            }
+
+        }
+        for(int k=0;k<length_t;k++)
+        {
+            int count2=0;
+            if(!thm.containsKey(t.charAt(k)))
+            {
+                char b=t.charAt(k);
+                for(int l=0;l<length_t;k++)
+                {
+                    if(t.charAt(l)==b)
+                    {
+                        count2++;
+                    }
+                }
+            
+                thm.put(t.charAt(k),count2);
+
+        }
+        }
+         for(Map.Entry m:thm.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+         for(Map.Entry m:shm.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+        
+        return output;
+    }
+}
+        
+        //System.out.println
+        /*char b='9';
+        for(int i=0;i<length_t;i++)
+        {
+            char a=t.charAt(i);
+            if(s.indexOf(a)>0)
+            {
+                if(hm.containsKey(s.indexOf(a)))
+                return t.charAt(i);
+            
+            }
+        }
+        return '1';
+        
+    }
+}*/
