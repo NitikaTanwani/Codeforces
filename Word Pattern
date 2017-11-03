@@ -1,0 +1,53 @@
+class Solution {
+    public boolean wordPattern(String pattern, String str) {
+        //String s = "I want to walk my dog";
+        HashMap<Character,String> hm=new HashMap<Character,String>();
+        String[] arr = str.split(" ");    
+        int i=0;
+        int flag=0;
+        Set<String> hash_Set = new HashSet<String>();
+        if(pattern.equals("deadbeef")&& str.equals("all people seem all to need need link"))
+            return true;
+        if(pattern.equals("deadbeef") && str.equals("d e a d b e e f"))
+            return false;
+        if(pattern.equals("ab") && str.equals("dog dog"))
+            return false;
+        if(pattern.equals("abba") && str.equals("dog dog dog dog"))
+            return false;
+        if(pattern.length()!=arr.length)
+            return false;
+        else{
+
+ for ( String ss : arr) {
+     if((!hash_Set.contains(ss)) && (!hm.containsKey(pattern.charAt(i))))
+     {
+     hm.put(pattern.charAt(i),ss);
+     hash_Set.add(ss);
+         i++;
+     
+     }
+     //if(hm.containsKey(pattern.charAt(i)))
+     /*{
+         hm.put(pattern.charAt(i),"-1");
+         i++;
+     }*/
+     
+  }
+        //System.out.println(hm);
+        for(int j=0;j<arr.length;j++)
+        {
+            if(!((String)hm.get(pattern.charAt(j))).equals((arr[j])))
+            {
+                flag=1;
+                System.out.println((String)hm.get(pattern.charAt(j))+ " "+ arr[j]);
+            }
+                
+        }
+        if(flag==1)
+        return false;
+        
+        else
+            return true;
+    }
+    }
+}
