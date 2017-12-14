@@ -1,0 +1,62 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    int min=100000;
+    int secmin=99999;
+    ArrayList<Integer> c=new ArrayList<Integer>();
+    public int findSecondMinimumValue(TreeNode root) {
+        if(root!=null)
+        {
+            boolean ans=checkequality(root);
+            if(ans==true)
+                secmin=-1;
+            else
+            {
+            if(root.val<min)
+                min=root.val;
+       if(root.val<=secmin && root.val>min)
+       {
+           //secmin=min;
+           secmin=root.val;
+       }
+            /*if(min==secmin)
+                secmin=-1;*/
+        findSecondMinimumValue(root.left);
+        findSecondMinimumValue(root.right); 
+        }
+        
+    }
+        return secmin;
+    }
+    public boolean checkequality(TreeNode root)
+    {
+        //ArrayList<Integer> c=new ArrayList<Integer>();
+        if(root!=null)
+        {
+        c.add(root.val);
+        checkequality(root.left);
+        checkequality(root.right);
+        
+        }
+        return checkvalue(c);
+    }
+    public boolean checkvalue(ArrayList<Integer> p)
+    {
+        for(int i=0;i<p.size()-1;i++)
+        {
+            if(p.get(i)!=p.get(i+1))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+}
