@@ -1,0 +1,74 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    String p="";
+    String q="";
+    public boolean isSymmetric(TreeNode root) {
+        String str1=righttraversal(root);
+        
+        String str2=lefttraversal(root);
+        
+        String str3=prerighttraversal(root);
+    
+        String str4=prelefttraversal(root);
+        
+        
+        if(str1.equals(str2) && str3.equals(str4))
+            return true;
+        else
+            return false;
+        
+    }
+    public String righttraversal(TreeNode root)
+    {
+        if(root!=null)
+        {
+            righttraversal(root.right);
+            p=p+root.val;
+            righttraversal(root.left);
+            
+        }
+        return p;
+    }
+    
+    public String lefttraversal(TreeNode root)
+    {
+        
+        if(root!=null)
+        {
+        lefttraversal(root.left);
+            q=q+root.val;
+        lefttraversal(root.right);
+        }
+        return q;
+    }
+public String prerighttraversal(TreeNode root)
+    {
+        if(root!=null)
+        {
+            p=p+root.val;
+            prerighttraversal(root.right);
+            prerighttraversal(root.left);
+            
+        }
+        return p;
+    }
+    
+    public String prelefttraversal(TreeNode root)
+    {
+        
+        if(root!=null)
+        {
+           q=q+root.val;
+           prelefttraversal(root.left);
+           prelefttraversal(root.right);
+        }
+        return q;
+    }}
