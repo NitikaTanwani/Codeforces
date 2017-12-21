@@ -1,0 +1,32 @@
+class Solution {
+    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        int n=A.length;
+        int count=0;
+        int sum=0;
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                sum=A[i]+B[j];
+                if(hm.containsKey(sum))
+                    hm.put(sum,hm.get(sum)+1);
+                else
+                    hm.put(sum,1);
+            }
+        }
+        
+        for(int k=0;k<n;k++)
+        {
+            for(int l=0;l<n;l++)
+            {
+                sum=-(C[k]+D[l]);
+                if(hm.containsKey(sum))
+                    count=count+hm.get(sum);
+                
+            }
+        }
+        return count;
+    }
+}
