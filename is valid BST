@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        if(root!=null)
+        {
+            if(root.left!=null)
+        if(root.left.val>=root.val)
+            return false;
+        /*TreeNode checkleft=root;
+        
+            while(checkleft.right!=null)
+            {
+               if(checkleft.right.val<root.val) 
+                   return false;
+            }
+        TreeNode checkright=root;
+            while(checkright.left!=null)
+            {
+               if(checkright.left.val>root.val) 
+                   return false;
+            }
+          */
+          if(root.right!=null)  
+        if(root.right.val<=root.val)
+            return false;
+        isValidBST(root.left);
+       isValidBST(root.right);
+        
+        }
+        return true;
+        
+    }
+}
