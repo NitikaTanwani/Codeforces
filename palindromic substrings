@@ -1,0 +1,46 @@
+class Solution {
+    public int countSubstrings(String s) {
+        int size=s.length();
+        int count=0;
+        for(int i=1;i<size+1;i++)
+        {
+            for(int j=0;j+i<=size;j++)
+            {
+                if(isPalindrome(s.substring(j,j+i)))
+                {
+                    count++;    
+                }
+            }
+        }
+        return count;
+        
+    }
+public boolean isPalindrome(String s) {
+       String pal=s;
+        if(pal.length()==0 || pal.length()==1)
+            return true;
+        
+        if(pal.length()==2 && pal.charAt(0)==pal.charAt(1))
+            return true;
+        
+        int first=0;
+        int last=pal.length()-1;
+        int mid=(pal.length()-1)/2;
+        
+        while(first<last && last>=mid && first<=mid)
+        {
+            if(pal.charAt(first)!=pal.charAt(last))
+                return false;
+            
+            else
+            {
+                first=first+1;
+                last=last-1;
+            }
+        }
+        
+        return true;
+        
+    }
+}
+
