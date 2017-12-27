@@ -1,0 +1,42 @@
+class Solution {
+    int max=-1000000;
+    public int maxSubArray(int[] nums) {
+        if(nums.length==1)
+            return nums[0];
+        for(int size=1;size<nums.length;size++)
+        {
+            for(int j=0;j<nums.length;j++)
+            {
+                
+               if(max<sum(nums,j,size))
+                   max=sum(nums,j,size);
+            }
+            
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>max)
+                max=nums[i];
+        }
+        return max;
+        /*Arrays.sort(nums);
+        if(max>nums[nums.length-1])
+        return max; 
+        
+        else
+             return nums[nums.length-1];*/
+           
+    }
+    
+    public int sum(int[] nums,int j,int size)
+    {
+        int sum=0;
+        while(size>=0 && j<=nums.length-1)
+        {
+          sum+=nums[j];
+            j+=1;
+            size--;
+        }
+        return sum;
+    }
+}
