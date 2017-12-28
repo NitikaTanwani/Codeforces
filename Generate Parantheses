@@ -1,0 +1,21 @@
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> par = new ArrayList<String>();
+        backtrack(par, "", 0, 0, n);
+        return par;
+    }
+    
+    public void backtrack(List<String> par, String dummy, int o, int c, int n){
+        
+        if(dummy.length() == n*2){
+            par.add(dummy);
+            return;
+        }
+        
+        if(o < n)
+            backtrack(par, dummy+"(", o+1, c, n);
+        if(c < o)
+            backtrack(par, dummy+")", o, c+1, n);
+    }
+        
+    }
